@@ -1,0 +1,7 @@
+room_no,type,rate,capacity,status
+101,Single,500,1,Occupied
+102,Single,500,1,Occupied
+103,Double,800,2,Available
+104,Double,800,2,Available
+105,Suite,1200,4,Occupied
+106,Suite,1200,4,Occupied
