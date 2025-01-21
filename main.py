@@ -52,7 +52,43 @@ def run_room_management():
 def run_reservation_management():
     pass
 def run_billing_and_payments():
-    pass
+    clear()
+    while True:
+        print("--------------------------------------")
+        print("            Billing Menu              ")
+        print("--------------------------------------")
+        print("1. Generate Bill")
+        print("2. View All Bills")
+        print("3. Back to Main Menu")
+        print("--------------------------------------")
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            clear()
+            customer_name = input("Enter customer name: ")
+            try:
+                room_charges = float(input("Enter room charges: "))
+                food_charges = float(input("Enter food charges: "))
+                service_charges = float(input("Enter service charges: "))
+            except ValueError:
+                print("Invalid input! Charges must be numbers.")
+                continue
+
+            payment_mode = input("Enter payment mode (Cash/Card/UPI): ")
+
+            clear()
+            billing.generate_bill(customer_name, room_charges, food_charges, service_charges, payment_mode)
+
+        elif choice == "2":
+            clear()
+            billing.display_bills()
+
+        elif choice == "3":
+            clear()
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
 def run_reports_and_analytics():
     pass
 def run_maintenance_and_housekeeping():
